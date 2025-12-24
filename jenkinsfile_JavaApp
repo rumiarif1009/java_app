@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven_3.9.12'
+    }
+
     stages {
         stage('code checkout') {
              steps {
@@ -28,6 +32,7 @@ pipeline {
         steps {
             sh 'mvn verify'
         }
-    }    
+    }
+    stage    
   }
 }        
