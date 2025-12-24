@@ -24,7 +24,7 @@ pipeline {
 
     stage('Integration Testing') {
         steps {
-            dir(./calculator_app) {
+            dir('./calculator_app') {
             sh 'mvn-integration test'
             }
         }
@@ -32,7 +32,7 @@ pipeline {
 
     stage('load testing') {
         steps {
-            dir(./calculator_app) {
+            dir('./calculator_app') {
             sh 'mvn verify'
             }
         }
