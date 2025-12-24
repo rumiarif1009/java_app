@@ -18,15 +18,17 @@ pipeline {
 
     stage('unit testing') {
         steps {
-            sh '''cd ./calculator_app
-             mvn test'''
+            sh '''
+                  cd ./calculator_app
+                  mvn test
+               '''
         }
     }
 
     stage('Integration Testing') {
         steps {
             dir('./calculator_app') {
-            sh 'mvn-integration test'
+            sh 'mvn integration-test'
             }
         }
     }
