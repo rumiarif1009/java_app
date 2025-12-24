@@ -24,13 +24,17 @@ pipeline {
 
     stage('Integration Testing') {
         steps {
+            dir(./calculator_app) {
             sh 'mvn-integration test'
+            }
         }
     }
 
     stage('load testing') {
         steps {
+            dir(./calculator_app) {
             sh 'mvn verify'
+            }
         }
     }   
   }
